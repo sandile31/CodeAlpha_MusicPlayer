@@ -1,0 +1,179 @@
+/* style.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: url('headphones.jpg') no-repeat center center/cover; /* Add your background image here */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#music-player {
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent to let background show */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  z-index: 10; /* Ensure it's above the floating icons */
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+#controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+#controls button {
+  background-color: #1db954;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#controls button:hover {
+  background-color: #1ed760;
+}
+
+#progress-container {
+  margin: 10px 0;
+}
+
+#progress-bar {
+  width: 100%;
+  appearance: none;
+  background-color: #555;
+  height: 5px;
+  border-radius: 5px;
+}
+
+#progress-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #1db954;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#volume-control {
+  margin: 15px 0;
+}
+
+#volume {
+  width: 100%;
+}
+
+#time-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* Floating music note icons */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(15deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+.music-note {
+  position: absolute;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.3);
+  animation: float 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+.music-note:nth-child(odd) {
+  animation-duration: 6s;
+}
+
+.music-note:nth-child(even) {
+  animation-duration: 5s;
+}
+
+.music-note-1 {
+  top: 10%;
+  left: 10%;
+}
+
+.music-note-2 {
+  top: 50%;
+  left: 80%;
+}
+
+.music-note-3 {
+  top: 30%;
+  left: 50%;
+}
+
+.music-note-4 {
+  top: 70%;
+  left: 20%;
+}
+
+.music-note-5 {
+  top: 40%;
+  left: 70%;
+}
+/* Song list styling */
+#song-list {
+  margin-top: 20px;
+  text-align: left;
+}
+
+#song-list h3 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#songs-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#songs-list li {
+  padding: 10px;
+  background-color: #333;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#songs-list li:hover {
+  background-color: #444;
+}
+
+#songs-list li.active {
+  background-color: #1db954;
+}

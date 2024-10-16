@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="music.css">
+</head>
+<body>
+
+<div class="music-note music-note-1">♪</div>
+    <div class="music-note music-note-2">♫</div>
+    <div class="music-note music-note-3">♪</div>
+    <div class="music-note music-note-4">♫</div>
+    <div class="music-note music-note-5">♪</div>
+    
+    <div id="music-player">
+        <h2 id="track-title">Track Title</h2>
+
+        <!-- Audio element -->
+        <audio id="audio-player" src=""></audio>
+
+        <!-- Control Buttons -->
+        <div id="controls">
+            <button id="prev">⏮️</button>
+            <button id="play-pause">▶️</button>
+            <button id="next">⏭️</button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progress-container">
+            <input type="range" id="progress-bar" value="0" max="100">
+        </div>
+
+        <!-- Volume Control -->
+        <div id="volume-control">
+            <label for="volume">Volume:</label>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+        </div>
+
+        <!-- Current Time / Duration -->
+        <div id="time-info">
+            <span id="current-time">00:00</span> / <span id="duration">00:00</span>
+        </div>
+    </div>
+
+     <!-- Song List -->
+        <div id="song-list">
+            <h3>Song List</h3>
+            <ul id="songs-list">
+                <!-- Dynamically populated with JavaScript -->
+            </ul>
+        </div>
+
+    <script src="music.js"></script>
+</body>
+</html>
